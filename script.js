@@ -84,3 +84,58 @@ if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
 } else {
   console.log(`${year} is not leaf year`);
 }
+
+// switch case
+
+const day = "tuesday";
+
+switch (day) {
+  case "friday":
+    console.log("Class nay.");
+    break;
+  case "saturday":
+  case "sunday":
+  case "monday":
+  case "tuesday":
+  case "wednesday":
+  case "thursday":
+    console.log("Class ace.");
+    break;
+  default:
+    console.log("Valid.");
+}
+
+//starement ans expression
+const book = "23 is bigger number";
+const book1 = "23 is not bigger number";
+
+if (23 > 40) {
+  console.log(book);
+} else {
+  console.log(book1);
+}
+
+//ternary operator
+
+let yourNumber = 150;
+if (yourNumber < 100) {
+  console.log("Your number is big");
+} else {
+  console.log("Your number is not big");
+}
+
+if (yourNumber < 50) console.log("You number is big");
+else "Your number is not big";
+
+yourNumber > 50
+  ? console.log("You number is big")
+  : console.log("You number is not big");
+
+yourNumber === 100 ? (yourNumber += 100) : (yourNumber -= 100);
+console.log(yourNumber);
+
+const a = 100;
+const b = 250;
+let c;
+a > b ? (c = a + b) : (c = b - a);
+console.log(c);
