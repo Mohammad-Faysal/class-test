@@ -183,3 +183,16 @@ function juiceMaker(apples, oranges) {
   return `${juice} ltr juice is ready using ${applePices} apple pices and ${orangesPices} orange pices`;
 }
 console.log(juiceMaker(15, 20));
+
+function moneyNoteCounter(money) {
+  return money;
+}
+
+function moneySaver(thousands, fivehundred) {
+  const thousandsnotes = moneyNoteCounter(thousands);
+  const fivehundrednotes = moneyNoteCounter(fivehundred);
+  const totalMoney = (thousands * fivehundred) / 1000;
+  return `There are total ${totalMoney}  thousands notes💸`;
+}
+
+console.log(moneySaver(1000, 200));
