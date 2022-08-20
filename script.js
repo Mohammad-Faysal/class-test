@@ -139,3 +139,47 @@ const b = 250;
 let c;
 a > b ? (c = a + b) : (c = b - a);
 console.log(c);
+//function declaratioins
+function ageCalculator(birthYear) {
+  const age = 2022 - birthYear;
+  return age;
+}
+const myBirthYear = 1860;
+console.log(ageCalculator(myBirthYear));
+// funcktion expressions
+
+const evenNumberFinder = function (number) {
+  if (number % 2 === 0) {
+    return `${number} is an even number`;
+  } else {
+    return `${number} is odd number`;
+  }
+};
+console.log(evenNumberFinder(35));
+// arrow function
+const doMath = (a, b, c) => {
+  const x = a + b;
+  const y = x * c;
+  return y;
+};
+console.log(doMath(10, 20, 15));
+
+const doMathPro = (x, y) => {
+  return x * y;
+};
+console.log(doMathPro(20, 25));
+
+const doMathUltraPro = (x, y) => x * y;
+console.log(doMathUltraPro(1000, 550));
+
+//function calling function
+function fruitsCutter(fruits) {
+  return fruits * 4;
+}
+function juiceMaker(apples, oranges) {
+  const applePices = fruitsCutter(apples);
+  const orangesPices = fruitsCutter(oranges);
+  const juice = (applePices + orangesPices) / 2;
+  return `${juice} ltr juice is ready using ${applePices} apple pices and ${orangesPices} orange pices`;
+}
+console.log(juiceMaker(15, 20));
