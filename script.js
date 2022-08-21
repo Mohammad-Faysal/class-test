@@ -192,7 +192,68 @@ function moneySaver(thousands, fivehundred) {
   const thousandsnotes = moneyNoteCounter(thousands);
   const fivehundrednotes = moneyNoteCounter(fivehundred);
   const totalMoney = (thousands * fivehundred) / 1000;
-  return `There are total ${totalMoney}  thousands notes💸`;
+  return `Total  thousands notes ${totalMoney} 💸`;
 }
 
 console.log(moneySaver(1000, 200));
+
+//brick calculations
+/*
+underground = 50000
+1st to 10th = 10000 per floor
+11th floor = 12000
+12th 21st = 10000
+22th floor = 12000
+
+
+73th floors = ?
+*/
+
+function brickCalculation(totalfloors) {
+  let totalBricks;
+  const undergroundBricks = 50000;
+  let bricksForAllfloors = totalfloors * 10000;
+
+  if (totalfloors >= 11) {
+    const extraFloors = Math.trunc(totalfloors / 11);
+    const extraBricks = extraFloors * 2000;
+    bricksForAllfloors += extraBricks;
+    totalBricks = undergroundBricks + bricksForAllfloors;
+  } else {
+    totalBricks = undergroundBricks + bricksForAllfloors;
+  }
+  return `total bricks needed: ${totalBricks}`;
+}
+console.log(brickCalculation(22));
+
+/*
+index values for 2*2: (1, -1) (2, -2)
+index values for 1*1: (3, -3) 
+*/
+
+function hybridNumeric(e, f, g, h, x, y) {
+  const max = (e + h) * (f + h);
+  const min = x + y;
+  const def = 2 * (max - min) * max;
+  const result = defFinder(def);
+
+  function defFinder(def) {
+    const hx = [1, -1];
+    const hy = [1, 1];
+    hx.push(def);
+    hy.push(def);
+    const hz = hx.concat(hy);
+
+    return hz;
+  }
+  return result;
+}
+
+const e = 1;
+const f = -2;
+const g = -1;
+const h = 2;
+const x = 3;
+const y = -3;
+
+console.log(hybridNumeric(e, f, g, h, x, y));
